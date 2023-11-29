@@ -1,0 +1,216 @@
+<!--
+   Copyright 2016 Google LLC
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.google.ar.core.examples.java.helloar.HelloArActivity">
+
+  <!--  <ImageButton-->
+<!--      android:id="@+id/settings_button"-->
+<!--      android:layout_width="wrap_content"-->
+<!--      android:layout_height="wrap_content"-->
+<!--      android:layout_alignParentEnd="true"-->
+<!--      android:layout_alignParentTop="true"-->
+<!--      android:layout_margin="25dp"-->
+<!--      android:src="@drawable/ic_settings"-->
+<!--      android:background="@android:color/transparent"/>-->
+
+
+  <android.opengl.GLSurfaceView
+      android:id="@+id/surfaceview"
+      android:layout_width="match_parent"
+      android:layout_height="342dp"
+      android:layout_gravity="top" />
+
+  <!--  Rendering -->
+
+  <Button
+      android:id="@+id/init_button"
+      android:layout_width="85dp"
+      android:layout_height="82dp"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentBottom="true"
+      android:layout_marginStart="4dp"
+      android:layout_marginEnd="321dp"
+      android:layout_marginBottom="20dp"
+      android:minHeight="48dp"
+      android:text="Init" />
+
+  <Button
+      android:id="@+id/run_button"
+      android:layout_width="84dp"
+      android:layout_height="82dp"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentBottom="true"
+      android:layout_marginStart="107dp"
+      android:layout_marginEnd="218dp"
+      android:layout_marginBottom="20dp"
+      android:text="Run" />
+
+  <Button
+      android:id="@+id/save_button"
+      android:layout_width="84dp"
+      android:layout_height="82dp"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentBottom="true"
+      android:layout_marginStart="308dp"
+      android:layout_marginEnd="17dp"
+      android:layout_marginBottom="20dp"
+      android:text="SAVE" />
+
+  <Button
+      android:id="@+id/stop_button"
+      android:layout_width="84dp"
+      android:layout_height="82dp"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentBottom="true"
+      android:layout_marginStart="206dp"
+      android:layout_marginEnd="120dp"
+      android:layout_marginBottom="20dp"
+      android:text="STOP" />
+
+  <TextView
+      android:id="@+id/textViewRes"
+      android:layout_width="362dp"
+      android:layout_height="36dp"
+      android:layout_below="@+id/surfaceview"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentEnd="true"
+      android:layout_marginStart="24dp"
+      android:layout_marginTop="135dp"
+      android:layout_marginEnd="26dp"
+      android:gravity="center_vertical|left|start"
+      android:text="Resolution: 40 x 40 x 40" />
+
+  <SeekBar
+      android:id="@+id/seekBarRes"
+      android:layout_width="362dp"
+      android:layout_height="42dp"
+      android:layout_below="@+id/surfaceview"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentEnd="true"
+      android:layout_marginStart="24dp"
+      android:layout_marginTop="173dp"
+      android:layout_marginEnd="26dp" />
+
+  <SeekBar
+      android:id="@+id/seekBarWeight"
+      android:layout_width="362dp"
+      android:layout_height="42dp"
+      android:layout_below="@+id/surfaceview"
+      android:layout_alignParentEnd="true"
+      android:layout_marginTop="91dp"
+      android:layout_marginEnd="26dp" />
+
+  <SeekBar
+      android:id="@+id/seekBarSize"
+      android:layout_width="227dp"
+      android:layout_height="40dp"
+      android:layout_below="@+id/surfaceview"
+      android:layout_alignParentEnd="true"
+      android:layout_marginTop="6dp"
+      android:layout_marginEnd="96dp" />
+
+  <TextView
+      android:id="@+id/textViewWeight"
+      android:layout_width="362dp"
+      android:layout_height="36dp"
+      android:layout_below="@+id/surfaceview"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentEnd="true"
+      android:layout_marginStart="24dp"
+      android:layout_marginTop="52dp"
+      android:layout_marginEnd="26dp"
+      android:gravity="center_vertical|left|start"
+      android:text="Weight: 0/300" />
+
+  <TextView
+      android:id="@+id/textView2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/seekBarRes"
+      android:layout_alignParentEnd="true"
+      android:layout_marginTop="13dp"
+      android:layout_marginEnd="264dp"
+      android:text="MeshRender" />
+
+  <TextView
+      android:id="@+id/textView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/textView2"
+      android:layout_alignParentEnd="true"
+      android:layout_marginTop="17dp"
+      android:layout_marginEnd="264dp"
+      android:text="1 Histogram" />
+
+  <Switch
+      android:id="@+id/histogramSwith"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/seekBarRes"
+      android:layout_alignParentEnd="true"
+      android:layout_marginTop="44dp"
+      android:layout_marginEnd="180dp" />
+
+  <TextView
+      android:id="@+id/textView3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/seekBarRes"
+      android:layout_alignParentEnd="true"
+      android:layout_marginTop="12dp"
+      android:layout_marginEnd="87dp"
+      android:text="VoxelRender" />
+
+  <TextView
+      android:id="@+id/textView4"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/textView3"
+      android:layout_alignParentEnd="true"
+      android:layout_marginTop="18dp"
+      android:layout_marginEnd="57dp"
+      android:text="Multi Histograms" />
+
+  <Switch
+      android:id="@+id/switchRendering"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/seekBarRes"
+      android:layout_alignParentEnd="true"
+      android:layout_marginTop="11dp"
+      android:layout_marginEnd="181dp" />
+
+  <TextView
+      android:id="@+id/textViewSize"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignBottom="@+id/seekBarSize"
+      android:layout_alignParentEnd="true"
+      android:layout_marginEnd="338dp"
+      android:layout_marginBottom="13dp"
+      android:text="Size" />
+
+  <!--  Histogram -->
+
+</RelativeLayout>
